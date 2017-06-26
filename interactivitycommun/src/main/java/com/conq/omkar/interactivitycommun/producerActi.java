@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 public class producerActi extends AppCompatActivity {
 
@@ -35,5 +36,19 @@ public class producerActi extends AppCompatActivity {
 
     private void onBack(View view) {
 
+        Intent intent = new Intent();
+        Bundle bundle = new Bundle();
+        bundle.putString("keyR",getRequired());
+        intent.putExtras(bundle);
+        setResult(RESULT_OK,intent);
+
+        finish();
+
+
+    }
+
+    public String getRequired() {
+        int rg = ((RadioGroup)findViewById(R.id.radioGrp)).getCheckedRadioButtonId();
+        return ((RadioButton)findViewById(rg)).getText().toString();
     }
 }

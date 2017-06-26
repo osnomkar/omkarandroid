@@ -1,10 +1,12 @@
 package com.conq.omkar.interactivitycommun;
 
+import android.app.Instrumentation;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         bundle.putString("key2","Laptop2");
 
         intent.putExtras(bundle);
-        startActivity(intent);
+        startActivityForResult(intent,77);
     }
 
     private void onMobile(View view) {
@@ -40,8 +42,18 @@ public class MainActivity extends AppCompatActivity {
         bundle.putString("key2","Mobile2");
 
         intent.putExtras(bundle);
-        startActivity(intent);
+        startActivityForResult(intent,77);
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 77){
+            if(resultCode == RESULT_OK){
+                Bundle bundle = data.getExtras();
+                ((TextView)findViewById(R.id.btnR)).setText(bundle.getString("keyR"));
+            }
+        }
+    }
 }

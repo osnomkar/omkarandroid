@@ -20,13 +20,18 @@
         android:id="@+id/btnLaptop"
         android:layout_below="@id/btnMobile"
         />
-    <FrameLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:background="#FF4437"
-        android:layout_below="@id/btnLaptop">
+        android:layout_below="@id/btnLaptop"
+        android:id="@+id/btnR"
+        android:gravity="center"
+        android:text="Omkar"
+        android:textColor="#ffffff"
+        android:textSize="40sp">
 
-    </FrameLayout>
+    </TextView>
 
 
 
