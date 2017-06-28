@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class producerActi extends AppCompatActivity {
 
@@ -36,19 +37,38 @@ public class producerActi extends AppCompatActivity {
 
     private void onBack(View view) {
 
-        Intent intent = new Intent();
-        Bundle bundle = new Bundle();
-        bundle.putString("keyR",getRequired());
-        intent.putExtras(bundle);
-        setResult(RESULT_OK,intent);
+            try {
+                if (getRequired() != null) {
+                    Intent intent = new Intent();
+                    Bundle bundle = new Bundle();
 
-        finish();
+                    bundle.putString("keyR", getRequired());
+                    intent.putExtras(bundle);
+                    setResult(RESULT_OK, intent);
+                    finish();
+
+                }
+
+                else {
+                    Toast.makeText(this, "Please Select Option", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+            catch (Exception e){}
+
+
 
 
     }
 
     public String getRequired() {
-        int rg = ((RadioGroup)findViewById(R.id.radioGrp)).getCheckedRadioButtonId();
-        return ((RadioButton)findViewById(rg)).getText().toString();
+        try {
+            int rg = ((RadioGroup) findViewById(R.id.radioGrp)).getCheckedRadioButtonId();
+            Log.i(producerActi.class.getCanonicalName(), "rg=" + rg);
+            return ((RadioButton) findViewById(rg)).getText().toString();
+        }
+        catch(Exception e){}
+        return null;
     }
+
 }

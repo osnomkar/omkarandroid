@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/compview&amp;layinflator" />
             <option value="$PROJECT_DIR$/interactivitycommun" />
             <option value="$PROJECT_DIR$/uixml" />
           </set>

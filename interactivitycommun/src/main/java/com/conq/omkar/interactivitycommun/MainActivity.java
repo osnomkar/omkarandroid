@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
        Button btnMobile = (Button)findViewById(R.id.btnMobile);
-       btnMobile.setOnClickListener(this ::onMobile);
+       btnMobile.setOnClickListener(this :: onMobile);
        findViewById(R.id.btnLaptop).setOnClickListener(this::onLaptop);
 
     }
