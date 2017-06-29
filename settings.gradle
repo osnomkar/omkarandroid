@@ -1,1 +1,1 @@
-include ':app', ':uixml', ':interactivitycommun', ':compview&layinflator'
+include ':app', ':uixml', ':interactivitycommun', ':compview&layinflator', ':nestedlayout', ':customview'
